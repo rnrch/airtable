@@ -55,6 +55,7 @@ func NewClient(apiKey string, baseID string) *Client {
 	}
 }
 
+// ListRecords lists records in the given table
 func (c *Client) ListRecords(table string, params map[string]string) (Records, error) {
 	records := Records{}
 	u, err := url.Parse(baseURL)
@@ -78,6 +79,7 @@ func (c *Client) ListRecords(table string, params map[string]string) (Records, e
 	return records, err
 }
 
+// GetRecord gets a record in the given table with the given id
 func (c *Client) GetRecord(table string, id string) (Record, error) {
 	r := Record{}
 	u, err := url.Parse(baseURL)
@@ -100,6 +102,7 @@ func (c *Client) GetRecord(table string, id string) (Record, error) {
 	return r, err
 }
 
+// CreateRecords creates records in the given table
 func (c *Client) CreateRecords(table string, records Records) error {
 	u, err := url.Parse(baseURL)
 	if err != nil {
@@ -126,6 +129,7 @@ func (c *Client) CreateRecords(table string, records Records) error {
 	return nil
 }
 
+// PatchRecords patches records in the given table
 func (c *Client) PatchRecords(table string, records Records) error {
 	u, err := url.Parse(baseURL)
 	if err != nil {
@@ -148,6 +152,7 @@ func (c *Client) PatchRecords(table string, records Records) error {
 	return nil
 }
 
+// DeleteRecords deletes records in the given table with given record ids
 func (c *Client) DeleteRecords(table string, ids []string) error {
 	records := resliceByNum(ids, 10)
 	for _, reqs := range records {

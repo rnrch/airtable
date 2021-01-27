@@ -2,6 +2,7 @@
 
 [![PkgGoDev](https://pkg.go.dev/badge/github.com/rnrch/airtable)](https://pkg.go.dev/github.com/rnrch/airtable)
 [![Go Report Card](https://goreportcard.com/badge/github.com/rnrch/airtable)](https://goreportcard.com/report/github.com/rnrch/airtable)
+[![License](https://img.shields.io/github/license/rnrch/airtable)](https://github.com/rnrch/airtable/blob/master/LICENSE)
 
 A simple airtable client.
 
